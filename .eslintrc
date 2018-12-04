@@ -1,0 +1,20 @@
+{
+  "extends": "standard",
+  "rules": {
+    "camelcase": "off",
+    "space-before-function-paren": "off",
+    "import/no-extraneous-dependencies": ["warn", {"devDependencies": ["./**/*.spec.js", "./**/gulpfile.js"]}],
+    "import/no-dynamic-require": "off",
+    "indent": ["error", 2, { "MemberExpression": 0, "SwitchCase": 2 }]
+  },
+  "globals": {
+    "describe": true,
+    "before": true,
+    "after": true,
+    "beforeEach": true,
+    "afterEach": true,
+    "it": true,
+    "expect": true,
+    "spyOn": true
+  }
+}
