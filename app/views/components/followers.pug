@@ -1,0 +1,8 @@
+.col-lg-4
+  .follower
+    - if (user.github !== undefined || user.avatar)
+      img(class="follower__image", src=user.avatar)
+    div.follower__user-info
+      span.follower__handle
+        - if (user.github !== undefined || user.username)
+          a(href="/users/" + user._id) @#{user.username || user.github.login}

@@ -1,0 +1,40 @@
+extends ../layouts/default
+
+block content
+  .row
+    .col-md-4.login-container
+        h3
+          form(method='post', action='/auth/login')
+            input(type='text', name='email', placeholder='Email', maxlength='300')
+            input(type='password', name='password', placeholder='Password', maxlength='300')
+            button.btn.btn-primary.btn-lg.btn-block.login-btn(type='submit')
+              span(class="icon-container")
+                i(class="fa fa-envelope fa-2x")
+              span.login-using-email Login using email
+
+        h3 Or
+
+        a(href="/signup", class="btn btn-primary btn-lg btn-block login-btn", style="margin-top: 10px !important;")
+          span.login-using-github Sign Up
+
+  .row.justify-content-center.text-center.stats-parent-container
+    .col-md-3
+      span.status-count #{tweetCount}
+      h5 Tweets Created
+
+    .col-md-3
+      span.status-count #{userCount}
+      h5 Unique Users
+
+    .col-md-3
+      span.status-count #{analyticsCount}
+      h5 Total Visits
+
+      if (typeof errors !== 'undefined')
+        .fade.in.alert.alert-block.alert-error
+          a.close(data-dismiss="alert", href="javascript:void(0)") x
+          ul
+            each error in errors
+              li = error.type
+
+  include ../components/modals/login

@@ -1,0 +1,11 @@
+.login.modal.fade
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+        h4.modal-title Login via Email
+      .modal-body
+        form(method='post', action='/login')
+          input(type='text', name='email', placeholder='Email', maxlength='300')
+          input(type='password', name='password', placeholder='Password', maxlength='300')
+          button.btn.new-tweet__button(type='submit') Login
